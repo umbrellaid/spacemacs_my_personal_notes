@@ -1,0 +1,104 @@
+* spacemacs my notes org format :TOC:
+  - [[#link-to-article-configuring-spacemacs-a-tutorial][Link to article "Configuring Spacemacs: A Tutorial"]]
+  - [[#general-links][General Links]]
+  - [[#old-configuration-section-1][Old Configuration Section 1]]
+  - [[#old-configuration-section-2][Old Configuration Section 2]]
+  - [[#old-configuration-section-3][Old Configuration Section 3]]
+  - [[#old-configuration-section-4][Old Configuration Section 4]]
+  - [[#old-configuration-section-5][Old Configuration Section 5]]
+
+** Link to article "Configuring Spacemacs: A Tutorial"
+https://github.com/trishume/trishume.github.com/blob/master/_posts%2F2015-03-07-configuring-spacemacs-a-tutorial.md
+** General Links
+https://www.spacemacs.org/
+https://github.com/syl20bnr/spacemacs
+https://www.spacemacs.org/doc/LAYERS.html
+https://www.spacemacs.org/doc/DOCUMENTATION.html#orgheadline21
+https://github.com/trishume/trishume.github.com/blob/master/_posts/2017-03-04-my-text-editor-journey-vim-spacemacs-atom-and-sublime-text.md
+** Old Configuration Section 1
+dotspacemacs-configuration-layers
+#+begin_src emacs-lisp
+  ;; List of configuration layers to load.
+  dotspacemacs-configuration-layers
+  '(
+    ;; ----------------------------------------------------------------
+    ;; Example of useful layers you may want to use right away.
+    ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
+    ;; `M-m f e R' (Emacs style) to install them.
+    ;; ----------------------------------------------------------------
+    auto-completion
+    better-defaults
+    emacs-lisp
+    git
+    helm
+    lsp
+    markdown
+    multiple-cursors
+    org
+    (shell :variables
+           shell-default-height 30
+           shell-default-position 'bottom)
+    spell-checking
+    syntax-checking
+    version-control
+    ranger
+    emoji
+    python
+    (evil-snipe
+     :variables
+     evil-snipe-enable-alternate-f-and-t-behaviors t)
+    notmuch
+    (elfeed :variables
+            elfeed-feeds '(
+                           ("http://nullprogram.com/feed/" emacs)
+                           ("https://planet.emacslife.com/atom.xml" emacs)
+                           ("https://www.reddit.com/r/emacs.rss" emacs)
+                           ("https://www.reddit.com/r/neovim.rss" neovim)
+                           ("https://www.reddit.com/r/vim.rss" vim)
+                           ("https://neovim.io/news.xml" neovim)
+                           ("https://dotfyle.com/this-week-in-neovim/rss.xml" neovim)
+                           ("https://protesilaos.com/master.xml" emacs)
+                           ("https://sachachua.com/blog/feed" emacs)
+                           ("https://www.reddit.com/r/orgmode.rss" emacs)
+                           ("https://karthinks.com/index.xml" emacs)
+                           )
+            )
+    treemacs)
+#+end_src
+** Old Configuration Section 2
+After that section this section I add apps from MELPA
+#+begin_src emacs-lisp
+  dotspacemacs-additional-packages '(
+                                     greader
+                                     sqlite3
+                                     )
+#+end_src
+** Old Configuration Section 3
+After that section is this section where I adjust a couple of settings:
+#+begin_src emacs-lisp
+  (defun dotspacemacs/user-init ()
+    "Initialization for user code:
+  This function is called immediately after `dotspacemacs/init', before layer
+  configuration.
+  It is mostly for variables that should be set before packages are loaded.
+  If you are unsure, try setting them in `dotspacemacs/user-config' first."
+    ;; For python
+    (add-hook 'python-mode-hook #'(lambda () (modify-syntax-entry ?_ "w")))
+    )
+#+end_src
+** Old Configuration Section 4
+After that section is this section where I set a variable for greader
+#+begin_src emacs-lisp
+  (defun dotspacemacs/user-config ()
+    "Configuration for user code:
+  This function is called at the very end of Spacemacs startup, after layer
+  configuration.
+  Put your configuration code here, except for variables that should be set
+  before packages are loaded."
+    (setq greader-espeak-rate 300)
+    (setq python-shell-interpreter "/usr/bin/python3.11")
+    )
+#+end_src
+Everything else is the standard configuration file without any changes.
+** Old Configuration Section 5
+After install run this command once SPC SPC all-the-icons-install-fonts
