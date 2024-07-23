@@ -1,4 +1,4 @@
-* spacemacs my notes org format :TOC:
+* spacemacs my notes org format :TOC_9:
   - [[#link-to-article-configuring-spacemacs-a-tutorial][Link to article "Configuring Spacemacs: A Tutorial"]]
   - [[#general-links][General Links]]
   - [[#old-configuration-section-1][Old Configuration Section 1]]
