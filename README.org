@@ -6,6 +6,7 @@
   - [[#old-configuration-section-3][Old Configuration Section 3]]
   - [[#old-configuration-section-4][Old Configuration Section 4]]
   - [[#old-configuration-section-5][Old Configuration Section 5]]
+  - [[#my-greader-workflow-in-spacemacs-in-detail][My Greader Workflow In Spacemacs In Detail]]
 
 ** Link to article "Configuring Spacemacs: A Tutorial"
 https://github.com/trishume/trishume.github.com/blob/master/_posts%2F2015-03-07-configuring-spacemacs-a-tutorial.md
@@ -102,3 +103,23 @@ After that section is this section where I set a variable for greader
 Everything else is the standard configuration file without any changes.
 ** Old Configuration Section 5
 After install run this command once SPC SPC all-the-icons-install-fonts
+** My Greader Workflow In Spacemacs In Detail
+Opening keybinding notes: when you have evil mode on you can do your LEADER KEY
+which can be set to anything but the default is =SPACE= (space bar key). If you
+have evil mode off you can do =ALT-m= (called Meta-m or M-m the M- part
+represents the Meta keybinding which is actually the alt key on modern
+keyboards - there were old keyboards that had this extra key that are not widely
+used anymore).
+
+Open Spacemacs then open the text file I want to have read to me with the
+robotic voice. Note the reading speed of the robot is set in your dot spacemacs
+(.spacemacs) config file. You press =SPC f e d= to open your configuration file.
+You then go to the ~defun dotspacemacs/user-config ()~ and add ~(setq
+greader-espeak-rate 300)~. You vary the number to whatever suites your preferred
+speaking pace. I would keep in mind that since it is reading text it is not
+perfectly comparable to the rate that people talk or what speed you would
+normally read. So just try different speeds until you find what works best for
+you.
+
+A customization I like to use it to do =SPC w c C= which is toggling distraction
+free settings to be active. This centers the text and gets rid of distractions
