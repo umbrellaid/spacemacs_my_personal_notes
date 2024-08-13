@@ -169,7 +169,7 @@ It should only modify the values of Spacemacs settings."
    ;; dotspacemacs-editing-style 'vim
    dotspacemacs-editing-style '(vim :variables
                                     vim-style-visual-feedback t
-                                    vim-style-remap-Y-to-y$ t
+                                    vim-style-remap-Y-to-y$ nil
                                     vim-style-retain-visual-state-on-shift t
                                     vim-style-visual-line-move-text nil
                                     vim-style-ex-substitute-global nil)
