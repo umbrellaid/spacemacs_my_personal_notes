@@ -32,7 +32,7 @@ This function should only modify configuration layer settings."
 
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(
+   '(vimscript
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
@@ -604,6 +604,7 @@ before packages are loaded."
             ("p" "Personal" entry (file+headline (expand-file-name "personal.org" org-directory) "Personal")
              "* TODO %?\n  %i\n  %a")))
     )
+  (define-key evil-insert-state-map (kbd "j k") 'evil-normal-state)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
